@@ -1,85 +1,67 @@
-# ✈️ Airline Customer Satisfaction Prediction
+# ✈️ Airline Customer Satisfaction ML Project
 
-This project focuses on predicting airline customer satisfaction using a **Decision Tree Classifier**. The dataset includes features such as gender, customer type, age, class, type of travel, flight distance, and various service ratings.
-
-The goal is to classify whether a customer is **satisfied** or **not satisfied** based on these attributes. This project demonstrates end-to-end data preprocessing, exploratory data analysis (EDA), feature engineering, model training, and evaluation using a Decision Tree.
+This Machine Learning project predicts airline customer satisfaction using a **Decision Tree Classifier**. The project was implemented in **Jupyter Notebook** and follows a complete machine learning pipeline from preprocessing to model evaluation.
 
 ---
 
 ## 📁 Dataset Overview
 
-The dataset includes the following key features:
+The dataset includes the following features:
 
-- **Demographic Information**: Gender, Age, Customer Type
-- **Flight Information**: Class, Type of Travel, Flight Distance, Departure/Arrival Delays
-- **Service Ratings**: Ratings for Inflight Service, Cleanliness, Food and Drink, etc.
-- **Target Variable**: `satisfaction` (encoded as 1 for Satisfied, 0 for Neutral or Dissatisfied)
+- **Demographics**: Gender, Age, Customer Type
+- **Flight Details**: Class, Type of Travel, Flight Distance, Departure and Arrival Delays
+- **Service Ratings**: Seat comfort, Cleanliness, Food and Drink, etc.
+- **Target Variable**: `satisfaction` (1 = Satisfied, 0 = Not Satisfied)
 
 ---
 
-## 🔧 Steps Performed
+## 🔧 Project Workflow
 
 ### 1. Data Preprocessing
 
-- Removed unnecessary columns (like `Unnamed: 0`)
-- Replaced spaces in column names with underscores for consistency
-- Handled missing values by dropping rows with `NaN`
-- Encoded the target variable (`satisfaction`) using binary mapping
-- Applied **Label Encoding** for categorical features
+- Removed the `Unnamed: 0` column
+- Dropped rows with missing values
+- Replaced spaces in column names with underscores
+- Converted the `satisfaction` column into binary format (1 and 0)
+- Applied **Label Encoding** to categorical variables
 
 ### 2. Exploratory Data Analysis (EDA)
 
-- Used **Seaborn** and **Matplotlib** for visualizing:
-  - Distribution of satisfaction across classes and types of travel
-  - Correlation heatmap between features
-  - Count plots for categorical features
-- Identified key patterns like higher satisfaction in Business Class and among Loyal Customers
+- Visualized customer satisfaction distribution
+- Analyzed relationships between satisfaction and features like travel class and customer type
+- Created a correlation heatmap using seaborn
 
 ### 3. Feature Scaling
 
-- Used **StandardScaler** to normalize numerical features such as `Age`, `Flight Distance`, and delays.
+- Applied `StandardScaler` to numerical features for model training
 
 ### 4. Model Building
 
-- Split data into training and testing sets (80/20 split)
-- Trained a **Decision Tree Classifier** using scikit-learn
+- Used **DecisionTreeClassifier** from scikit-learn
+- Split the data into training and testing sets using an 80/20 ratio
 
 ### 5. Model Evaluation
 
-The performance of the model was evaluated using multiple metrics:
+The Decision Tree model performance:
 
-- **Accuracy Score**: `0.946`
-- **Precision Score**: `0.95`
-- **Recall Score**: `0.94`
-- **F1 Score**: `0.94`
-- **Confusion Matrix** and **Classification Report** were also generated for a detailed breakdown.
+- **Accuracy Score**: `0.9154694286668894`
+- **Recall Score**: `0.8987730061349694`
+- **F1 Score**: `0.9025798998844821`
+- **Precision Score**: `0.9064191802010828`
 
----
-
-## 📌 Key Findings
-
-- **Loyal Customers** and **Business Class** travelers were more likely to be satisfied.
-- Decision Tree performed well with a high accuracy and balanced precision/recall.
-- Features like `Inflight_wifi_service`, `Online_boarding`, and `Seat_comfort` had noticeable influence on satisfaction.
+A classification report and confusion matrix were also generated.
 
 ---
 
-## 🛠️ Tools & Libraries Used
+## 🛠️ Tools Used
 
-- Python
+- Python (Jupyter Notebook)
 - Pandas, NumPy
 - Seaborn, Matplotlib
 - Scikit-learn (DecisionTreeClassifier, metrics, preprocessing)
 
 ---
 
-## 📊 Conclusion
+## 🧑‍💻 Author
 
-This project successfully demonstrates how a **Decision Tree model** can be used to predict customer satisfaction with high accuracy using a clean and interpretable set of features. The workflow included complete preprocessing, meaningful EDA, and a well-evaluated model.
-
----
-
-## 📌 Author
-
-This project was solely developed and implemented by the author using personal code and analysis.
-
+This project was fully implemented by the author using Jupyter Notebook. All analysis, visualization, and model training were done from scratch using personal code.
